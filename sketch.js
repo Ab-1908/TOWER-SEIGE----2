@@ -68,6 +68,7 @@ Engine.update(engine);
    ground2.display();
   
    ball.display();
+   
    box1.display();
    box2.display();
    box3.display();

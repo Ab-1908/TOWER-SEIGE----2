@@ -13,13 +13,18 @@ class Box
         
         this.width = width;
         this.height = height;
-        this.Visibilty = 255;
+        this.Visiblity = 255;
     }
     display()
     {
         console.log(this.body.speed);
-        if(this.body < 3){
-         
+        if(this.body.speed < 3){
+
+        var pos = this.body.position;
+        rectMode (CENTER);
+        fill("yellow");
+        rect(pos.x, pos.y, this.width, this.height);
+        
         }
         else
     {
@@ -27,15 +32,11 @@ class Box
       push();
       this.Visiblity = this.Visiblity -5;
       tint (255, this.Visiblity);
-      rect(this.image , this.body.position.x , this.body.position.y);
+      image(this.image , this.body.position.x , this.body.position.y);
       pop();
 
 
     }
-        var pos = this.body.position;
-        rectMode (CENTER);
-        fill("yellow");
-        rect(pos.x, pos.y, this.width, this.height);
         
     }
 }
