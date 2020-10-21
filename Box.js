@@ -9,15 +9,16 @@ class Box
             density: 1.0
         }
         this.body = Bodies.rectangle(x, y, width, height, options);
-        World.add(world, this.body);
         
         this.width = width;
         this.height = height;
-        this.Visiblity = 255;
+        this.Visibility = 255;
+
+        World.add(world, this.body);
     }
     display()
+
     {
-        console.log(this.body.speed);
         if(this.body.speed < 3){
 
         var pos = this.body.position;
@@ -30,11 +31,12 @@ class Box
     {
       World.remove(world, this.body);
       push();
-      this.Visiblity = this.Visiblity -5;
-      tint (255, this.Visiblity);
-      image(this.image , this.body.position.x , this.body.position.y);
+      this.Visibility = this.Visibility -5;
+      tint (255, this.Visibility);
+      fill("yellow");
+      rect(this.body.position.x , this.body.position.y, this.width, this.height);
       pop();
-
+      console.log(this.Visibility);
 
     }
         
